@@ -1,12 +1,12 @@
 # SystemStatus
-[![SystemStatus](https://img.shields.io/badge/SystemStatus-V1.2.1--Stable-red.svg)]
+[![SystemStatus](https://img.shields.io/badge/SystemStatus-V1.2.1--Stable-red.svg)](https://github.com/AddictProject/SystemStatus/releases)
 
 SystemStatus est le CMS gratuit grâce auquel vos clients seront toujours informés de l'état de vos infrastructures et services.
 
 ### Liens important
 * [GitHub AddictProject](https://github.com/AddictProject)
 * [GitHub SystemStatus](https://github.com/AddictProject/SystemStatus)
-* [GitHub Support](https://github.com/AddictProject/SystemStatus/issues)
+* [Bug Reports](https://github.com/AddictProject/SystemStatus/issues)
 * [Wiki](https://github.com/AddictProject/SystemStatus/wiki)
 * [AddictProject](http://addictproject.fr/#!/home)
 * [SystemStatus](https://www.systemstatus.fr/)
