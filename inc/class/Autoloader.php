@@ -2,15 +2,15 @@
 // Copyright © 2017 by SystemStatus.fr
 // All rights reserved. This file or any portion thereof MUST contain the following copyrights.
 
-class Autoloader
-{
+  class Autoloader
+  {
 
     /**
      * Enregistre notre autoloader
      */
     static function register()
     {
-        spl_autoload_register(array(__CLASS__, 'autoload'));
+      spl_autoload_register([__CLASS__, 'autoload']);
     }
 
     /**
@@ -19,7 +19,7 @@ class Autoloader
      */
     static function loadClass($class)
     {
-        require __DIR__.'/'.$class.'.php';
+      require __DIR__ . '/' . $class . '.php';
     }
 
     /**
@@ -28,7 +28,7 @@ class Autoloader
      */
     static function loadRoute($class, $router)
     {
-        require __DIR__.'/../routes/'.$class.'.php';
+      require __DIR__ . '/../routes/' . $class . '.php';
     }
 
     /**
@@ -37,7 +37,7 @@ class Autoloader
      */
     static function loadController($class)
     {
-        require __DIR__.'/../controllers/'.$class.'.php';
+      require __DIR__ . '/../controllers/' . $class . '.php';
     }
 
     /**
@@ -46,8 +46,8 @@ class Autoloader
      */
     static function loadMiddleware($class)
     {
-        require __DIR__.'/../middlewares/'.$class.'.php';
+      require __DIR__ . '/../middlewares/' . $class . '.php';
     }
 
 
-}
+  }
