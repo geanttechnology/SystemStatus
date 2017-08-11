@@ -1,0 +1,236 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    font-family: 'Raleway', sans-serif;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: auto;
+}
+footer div.container p {
+    margin: 20px 0px;
+}
+footer {
+    background-color: rgb(250,250,250);
+    border-top: 5px solid rgb(237,237,237);
+}
+/* Sticky footer styles [END]
+-------------------------------------------------- */
+@media only screen and (max-width: 599px) {
+    body {
+        background-size: auto;
+        margin-bottom: 0px;
+    }
+    .full_mobile {
+        width: 100%;
+    }
+    .xmp-085 {
+        margin-bottom: 3px;
+    }
+    .footer {
+        position: relative;
+        top: 10px;
+        /* Set the fixed height of the footer here */
+        height: auto;
+        margin-bottom: 0px !important;
+    }
+    .footer-custom {
+        background: white;
+        padding-top: 10px;
+    }
+    #auth-info {
+        padding-bottom: 25px !important;
+    }
+    .maintenance-page .fa-cog {
+        position: relative;
+        top: 25%;
+        margin-top: 35%;
+
+    }
+
+    .maintenance-page {
+        height: 50vh !important;
+        min-height: 70vh !important;
+        max-height: unset !important;
+    }
+}
+
+.maintenance-page {
+    height: 50vh;
+    min-height: 50vh;
+    max-height: 50vh;
+    margin-top: 25%;
+    text-align: center;
+    font-size: 20px;
+}
+
+.navbar-brand img {
+    height: 40px;
+    display: inline;
+}
+
+.status_dot {
+    font-weight: 400 !important;
+    font-size: 14px !important;
+}
+
+.link {
+    cursor: pointer;
+}
+
+.white-text {
+    color: white !important;
+}
+
+.text-success {
+    color: #7ed321 !important;
+}
+
+.text-warning {
+    color: #f7ca18 !important;
+}
+
+.accidentHistoryVignette {
+    padding: 15px;
+    border: 1px solid #d2d2d2;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    -webkit-transition: all 250ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+    -moz-transition: all 250ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+    -o-transition: all 250ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+    transition: all 250ms cubic-bezier(0.250, 0.100, 0.250, 1.000); /* ease (default) */
+
+    -webkit-transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
+    -moz-transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
+    -o-transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
+    transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000); /* ease (default) */
+}
+
+.accidentHistoryVignette:hover {
+    border-color: #46a1eb;
+}
+
+#lom-452, .container {
+    margin-top: 3%;
+}
+
+.footer .container {
+    margin-top: 0;
+}
+.margint5 {
+    margin-top: 5px;
+}
+
+#uav-729 {
+    position: absolute;
+    bottom: 3px;
+    left: 3px;
+    color: black;
+}
+
+.not-configured-yet {
+    margin-top: 15%;
+}
+
+.navbar-header {
+    width: 100%;
+}
+
+.navbar-brand {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100%;
+}
+
+.accident-link {
+    padding-top: 3px;
+}
+
+@media only screen and (max-width: 540px) {
+
+    #lom-452 {
+        min-height: 50vh;
+        margin: 0;
+        padding: 0;
+    }
+
+    #lom-453 {
+        margin-bottom: 50vh;
+    }
+
+    body {
+        padding: 0px 3px 0px 3px !important;
+    }
+
+    .gld-106 {
+        float: none !important;
+        width: 100%;
+        display: block;
+    }
+
+    .msl-234 {
+        margin-top: 3px;
+    }
+    .header-logo {
+        height: 30px !important;
+    }
+
+    .navbar-brand {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .navbar-header {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+}
+
+@media only screen and (min-width: 541px) {
+    .navbar-brand {
+        position: relative;
+        bottom: 10px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        width: 100%;
+    }
+    .header-logo {
+        height: 40px;
+    }
+    .custom-header-logo {
+        position: relative;
+        top: 10px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    html {
+        position: relative;
+        min-height: 100%;
+    }
+    .footer-custom {
+        margin-top: -5px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    body {
+        padding: 0px 3px 0px 3px !important;
+    }
+
+
+
+}
+
+
+
+
