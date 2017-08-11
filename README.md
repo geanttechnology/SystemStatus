@@ -9,6 +9,7 @@ SystemStatus est le CMS gratuit grâce auquel vos clients seront toujours inform
 * [Bug Reports](https://github.com/AddictProject/SystemStatus/issues)
 * [Aide dans l'installation](https://www.systemstatus.fr/tutorial)
 * [AddictProject](http://addictproject.fr/#!/home)
+* [Channel Telegram](https://t.me/systemstatusdev)
 * [SystemStatus](https://www.systemstatus.fr/)
 * [Demo SystemStatus](https://demo.systemstatus.fr/)
 * [Twitter](https://twitter.com/AP_SystemStatus)
