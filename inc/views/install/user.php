@@ -18,23 +18,23 @@ $root = $webProtocol . $_SERVER["HTTP_HOST"] . $root[0];
 
 <div id="result"></div>
 <br/>
-<h4>Création du compte administrateur</h4>
+<h4><?=LANG['install']['user-making']?></h4>
 <p>
 <form id="registerForm" class="col-sm-12">
     <div class="form-group col-sm-12 col-md-12">
-        <h4 class="text-muted">Identifiants de connexion</h4>
-        <label for="exampleInputEmail1">Nom d'utilisateur (3-16)</label>
-        <input class="form-control" type="text" name="username" placeholder="Veuillez saisir l'utilisateur de connexion" required>
+        <h4 class="text-muted"><?=LANG['install']['credentials']?></h4>
+        <label for="exampleInputEmail1"><?=LANG['install']['username-chat-limit']?></label>
+        <input class="form-control" type="text" name="username" placeholder="<?=LANG['install']['username-placeholder']?>" required>
         <br>
-        <label for="exampleInputEmail1">Mot de passe</label>
+        <label for="exampleInputEmail1"><?=LANG['global']['maj-password']?></label>
         <div class="input-group">
-            <input id="Passcode" type="password" class="form-control" name="password" placeholder="Veuillez saisir le mot de passe de connexion" required>
+            <input id="Passcode" type="password" class="form-control" name="password" placeholder="<?=LANG['install']['password-placeholder']?>" required>
             <div id="PasscodeBtn" class="input-group-addon link"><i id="PasscodeIcon" class="fa fa-eye"></i></div>
         </div>
     </div>
     <div class="col-sm-12">
         <hr>
-        <button type="submit" class="btn btn-primary pull-right" name="submit_userConfig">Suivant</button>
+        <button type="submit" class="btn btn-primary pull-right" name="submit_userConfig"><?=LANG['global']['maj-next']?></button>
     </div>
 </form>
 </p>

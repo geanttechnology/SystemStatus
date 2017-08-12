@@ -33,9 +33,14 @@
         define('APP_URL', (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]");
       }
 
+
+
       $this->loadClass();
       $this->loadMiddlewares();
       $this->loadControllers();
+      if(!App::isInstalled()){
+        define('LANG', $this->loadLanguageWCookie());
+      }
       $this->loadRoutes();
       if (App::isInstalled())
         $this->loadTheme();
@@ -67,6 +72,11 @@
 
     }
 
+    private function loadLanguageWCookie()
+    {
+      return LanguageController::preloadWCookie();
+    }
+
     private function loadRoutes()
     {
       $router = new \Bramus\Router\Router(); // creating router
@@ -82,6 +92,7 @@
     private function loadControllers()
     {
       Autoloader::loadController('Controller');
+      Autoloader::loadController('LanguageController');
       Autoloader::loadController('HomeController');
       Autoloader::loadController('InstallController');
       Autoloader::loadController('AuthController');

@@ -17,21 +17,21 @@ $root = $webProtocol . $_SERVER["HTTP_HOST"] . $root[0];
 </style>
 
 <p>
-<h4>Configuration du CMS</h4>
+<h4><?=LANG['install']['cms-config']?></h4>
 
 <div id="result"></div>
 
 <form id="appForm" class="col-sm-12">
     <div class="form-group col-sm-12 col-md-12">
-        <label for="exampleInputEmail1">URL du cms</label>
-        <input class="form-control" type="text" name="url" value="<?=$root?>"  placeholder="Veuillez saisir l'url du cms" required>
+        <label for="exampleInputEmail1"><?=LANG['install']['cms-url']?></label>
+        <input class="form-control" type="text" name="url" value="<?=$root?>"  placeholder="<?=LANG['install']['cms-url-placeholder']?>" required>
         <br>
-        <label for="exampleInputEmail1">Nom</label>
-        <input class="form-control" type="text" name="name" placeholder="Veuillez saisir le nom du cms" required>
+        <label for="exampleInputEmail1"><?=LANG['global']['maj-name']?></label>
+        <input class="form-control" type="text" name="name" placeholder="<?=LANG['install']['cms-name-placeholder']?>" required>
     </div>
     <div class="col-sm-12">
         <hr>
-        <button type="submit" class="btn btn-primary pull-right" name="submit_dbConfig">Suivant</button>
+        <button type="submit" class="btn btn-primary pull-right" name="submit_dbConfig"><?=LANG['global']['maj-next']?></button>
     </div>
 </form>
 </p>

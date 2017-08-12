@@ -16,7 +16,6 @@ class CategoryController extends Controller
     $this->middleware('AuthMiddleware');
     $this->middleware('StatusMiddleware');
     $this->middleware('APIMiddleware');
-
   }
 
   public function add()

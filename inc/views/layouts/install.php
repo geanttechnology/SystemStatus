@@ -17,9 +17,9 @@ All rights reserved. This file or any portion thereof MUST contain the following
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <title>SystemStatus | Installation</title>
+    <title><?=LANG['install']['head-html']['title']?></title>
     <meta name="author" content="SystemStatus.fr">
-    <meta name="description" content="This website has been made by the awesome SystemStatus CMS">
+    <meta name="description" content="<?=LANG['install']['head-html']['description']?>">
 
     <!-- Bootstrap -->
     <link href="<?=$root?>/inc/assets/css/bootstrap.min.css" rel="stylesheet">
@@ -47,14 +47,14 @@ All rights reserved. This file or any portion thereof MUST contain the following
 <div class="panel panel-primary">
 
     <div class="panel-heading">
-        Assistant d'installation
+        <?=LANG['install']['install_assistant']?>
         <span class="pull-right link hidden-xs hidden-sm" onclick="window.open('https://www.systemstatus.fr', '_blank')">
             <img src="<?=$root?>/inc/assets/img/logo.png" alt="" style="height: 25px;">
-            <small>Powered by SystemStatus</small>
+            <small><?=LANG['global']['copyrights-nolink']?></small>
         </span>
         <span class="link hidden-md hidden-lg text-right" style="display: block;" onclick="window.open('https://www.systemstatus.fr', '_blank')">
             <img src="<?=$root?>/inc/assets/img/logo.png" alt="" style="height: 25px;">
-            <small>Powered by SystemStatus</small>
+            <small><?=LANG['global']['copyrights-nolink']?></small>
         </span>
     </div>
 

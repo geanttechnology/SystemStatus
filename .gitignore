@@ -1,2 +1,6 @@
 
 \.idea/
+
+config/app\.php
+
+config/rootWebUrl

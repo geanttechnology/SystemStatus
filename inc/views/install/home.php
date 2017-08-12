@@ -1,24 +1,38 @@
 <?php $this->layout('layouts::install'); ?>
 <?php
-$webProtocol = (isset($_SERVER['HTTPS']) ? "https://" : "http://");
-$root = explode("/install", $_SERVER["REQUEST_URI"]);
-$root = $webProtocol . $_SERVER["HTTP_HOST"] . $root[0];
+  $webProtocol = (isset($_SERVER['HTTPS']) ? "https://" : "http://");
+  $root = explode("/install", $_SERVER["REQUEST_URI"]);
+  $root = $webProtocol . $_SERVER["HTTP_HOST"] . $root[0];
 ?>
 <style media="screen">
     #home {
         margin-top: 10%;
     }
 
-    @media only screen and (max-width: 599px){
+    @media only screen and (max-width: 599px) {
         #home {
             margin-top: 30%;
         }
     }
 </style>
 <p>
-    Bonjour, bienvenue dans l'assistant d'installation de SystemStatus.<br>
-    Veuillez suivre les étapes décrites dans ce script d'installation afin de pouvoir utiliser votre système.
-    <hr>
+  <?=LANG['install']['home-page-welcome']?>
 
-  <a href="<?=$root?>/install/cms"><button type="button" class="btn btn-primary pull-right">Suivant</button></a>
+<hr>
+
+<span class="text-left">
+    <strong>Language: </strong>
+          <?php
+
+            $languages = InstallController::showLanguages();
+            foreach ($languages as $languageKey => $languageValue):?>
+                <a href="?lang=<?=$languages[$languageKey]?>"><img src="<?=$root?>/inc/assets/img/flags/<?=$languages[$languageKey]?>.png" alt="<?=$languages[$languageKey]?>"></a>
+            <?php endforeach;
+
+          ?>
+</span>
+
+<a href="<?= $root ?>/install/cms?lang=<?=$_COOKIE['lang']?>">
+    <button type="button" class="btn btn-primary pull-right"><?=LANG['global']['maj-next']?></button>
+</a>
 </p>
