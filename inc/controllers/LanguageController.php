@@ -8,7 +8,12 @@
 
     }
 
-    public static function preloadWCookie()
+    public static function showInstallList()
+    {
+      return array_diff(scandir(__DIR__ . "/../../lang", 1), ['..', '.']);
+    }
+
+    public static function preloadWCookie() //used during install
     {
       if (isset($_GET['lang']) && !empty($_GET['lang']) && strlen($_GET['lang']) == 2) {
 
@@ -26,10 +31,14 @@
       }
     }
 
-    public static function showInstallList()
+    public static function preload() //used by default (after install)
     {
-      return array_diff(scandir(__DIR__ . "/../../lang", 1), ['..', '.']);
+
+        return $lang = LanguageController::load(CMS_LANGUAGE);
+
     }
+
+
 
     public static function load($language)
     {

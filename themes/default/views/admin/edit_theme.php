@@ -1,4 +1,6 @@
 <?php
+/*Copyright © 2017 by SystemStatus.fr
+All rights reserved. This file or any portion thereof MUST contain the following copyrights.*/
 $theme = new Theme(THEME_NAME_);
 if(!$theme->isTheme())
   Auth::alert("<strong>Erreur</strong>, ce thème n'existe pas !", "error");

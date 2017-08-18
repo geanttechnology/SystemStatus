@@ -40,6 +40,8 @@
       $this->loadControllers();
       if(!App::isInstalled()){
         define('LANG', $this->loadLanguageWCookie());
+      }else{
+        define('LANG', $this->loadLanguage());
       }
       $this->loadRoutes();
       if (App::isInstalled())
@@ -62,6 +64,7 @@
       define('CMS_API', $app['cms']['api_key']);
       define('THEME_NAME', $app['theme']['name']);
       define('APP_NAME', $app['name']);
+      define('CMS_LANGUAGE', $app['language']);
       // APP_URL AND ROOT DIRECTORY
       if (file_exists(__DIR__ . '/../../config/app.php') && App::isInstalled()) {
         define('APP_URL', $app['url']);
@@ -75,6 +78,11 @@
     private function loadLanguageWCookie()
     {
       return LanguageController::preloadWCookie();
+    }
+
+    private function loadLanguage()
+    {
+      return LanguageController::preload();
     }
 
     private function loadRoutes()

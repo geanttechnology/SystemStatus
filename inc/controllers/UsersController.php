@@ -20,9 +20,11 @@ class UsersController extends Controller
     $this->middleware('APIMiddleware');
   }
 
-  public static function addUserForInstall($licence, $api_key, $username, $password, $rank = 3)
+  public static function addUserForInstall($licence, $api_key, $username, $password, $lang)
   {
     if (!empty($username) && !empty ($password)) {
+
+      $rank = 3;
 
       $resultAddUser = file_get_contents("https://api.systemstatus.fr/v3/?licence=" . $licence . "&api_key=" . $api_key . "&request=addUser&username=" . $username . "&password=" . $password . "&rank=" . $rank);
 
@@ -31,7 +33,7 @@ class UsersController extends Controller
       if ($resultAddUser['request'] == "successful") {
         $root = file_get_contents(__DIR__ . "/../../config/rootWebUrl");
         echo Auth::alert(LANG['controllers']['users']['success-created'], "success");
-        echo "<script>window.location='" . $root . "/install/finish?lang=".$_COOKIE['lang']."'</script>";
+        echo "<script>window.location='" . $root . "/install/finish?lang=" . $lang . "'</script>";
       } else if ($resultAddUser['why'] == "limits reached") {
         echo Auth::alert(LANG['controllers']['users']['limits-reached'], "error");
       } else if ($resultAddUser['why'] == "already exists") {

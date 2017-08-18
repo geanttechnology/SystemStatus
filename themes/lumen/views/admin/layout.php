@@ -1,3 +1,9 @@
+<?php
+
+/*Copyright © 2017 by SystemStatus.fr
+All rights reserved. This file or any portion thereof MUST contain the following copyrights.*/
+
+?>
 <div class="list-group">
     <button type="button" class="list-group-item">Bienvenue <?=Auth::getUsername()?>
         <small class="pull-right">Accès de niveau <?=Auth::getTypeAccount(Auth::getRank())?></small>

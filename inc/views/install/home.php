@@ -32,7 +32,12 @@
           ?>
 </span>
 
-<a href="<?= $root ?>/install/cms?lang=<?=$_COOKIE['lang']?>">
+<?php if(isset($_GET['lang']) && !empty($_GET['lang']) && strlen($_GET['lang']) == 2): ?>
+<a href="<?= $root ?>/install/cms?lang=<?=$_GET['lang']?>">
     <button type="button" class="btn btn-primary pull-right"><?=LANG['global']['maj-next']?></button>
 </a>
+<?php else: ?>
+<a href="<?= $root ?>/install/cms?lang=fr">
+    <button type="button" class="btn btn-primary pull-right"><?=LANG['global']['maj-next']?></button>
+    </a><?php endif; ?>
 </p>

@@ -1,3 +1,9 @@
+<?php
+
+/*Copyright © 2017 by SystemStatus.fr
+All rights reserved. This file or any portion thereof MUST contain the following copyrights.*/
+
+?>
 <nav class="navbar navbar-deglyphiconult navbar-fixed-top col-sm-12">
     <div class="container-fluid">
         <div class="navbar-header">

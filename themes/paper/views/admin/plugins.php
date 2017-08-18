@@ -1,3 +1,9 @@
+<?php
+
+/*Copyright © 2017 by SystemStatus.fr
+All rights reserved. This file or any portion thereof MUST contain the following copyrights.*/
+
+?>
 <div class="col-sm-12 col-md-10 dzq-345 animated fadeIn">
   <div id="result"></div>
     <h4>Liste des plugins installés sur votre CMS</h4>

@@ -9,7 +9,7 @@ $root = $webProtocol . $_SERVER["HTTP_HOST"] . $root[0];
         margin-top: 10%;
     }
 
-    @media only screen and (max-width: 599px){
+    @media only screen and (max-width: 599px) {
         #home {
             margin-top: 25%;
         }
@@ -17,40 +17,45 @@ $root = $webProtocol . $_SERVER["HTTP_HOST"] . $root[0];
 </style>
 
 <p>
-<h4><?=LANG['install']['cms-config']?></h4>
+<h4><?= LANG['install']['cms-config'] ?></h4>
 
 <div id="result"></div>
 
 <form id="appForm" class="col-sm-12">
     <div class="form-group col-sm-12 col-md-12">
-        <label for="exampleInputEmail1"><?=LANG['install']['cms-url']?></label>
-        <input class="form-control" type="text" name="url" value="<?=$root?>"  placeholder="<?=LANG['install']['cms-url-placeholder']?>" required>
+        <label for="exampleInputEmail1"><?= LANG['install']['cms-url'] ?></label>
+        <input class="form-control" type="text" name="url" value="<?= $root ?>"
+               placeholder="<?= LANG['install']['cms-url-placeholder'] ?>" required>
         <br>
-        <label for="exampleInputEmail1"><?=LANG['global']['maj-name']?></label>
-        <input class="form-control" type="text" name="name" placeholder="<?=LANG['install']['cms-name-placeholder']?>" required>
+        <label for="exampleInputEmail1"><?= LANG['global']['maj-name'] ?></label>
+        <input class="form-control" type="text" name="name" placeholder="<?= LANG['install']['cms-name-placeholder'] ?>"
+               required>
     </div>
     <div class="col-sm-12">
         <hr>
-        <button type="submit" class="btn btn-primary pull-right" name="submit_dbConfig"><?=LANG['global']['maj-next']?></button>
+        <button type="submit" class="btn btn-primary pull-right"
+                name="submit_dbConfig"><?= LANG['global']['maj-next'] ?></button>
     </div>
 </form>
 </p>
 
 <script type="text/javascript">
-    $("#appForm").on("submit", function(e){
-      e.preventDefault();
-      $.ajax({
-        url: "<?=$root?>/install/cms",
-        type: "POST",
-        data: $(this).serialize(),
-        success: function(data)
-        {
-          $("#notification").html(data);
-        },
-        error: function(data)
-        {
-          $("#notification").html(data);
-        }
-      })
+    $("#appForm").on("submit", function (e) {
+        e.preventDefault();
+        $.ajax({
+          <?php if(isset($_GET['lang']) && !empty($_GET['lang']) && strlen($_GET['lang']) == 2): ?>
+            url: "<?=$root?>/install/cms/<?=$_GET['lang']?>",
+          <?php else: ?>
+            url: "<?=$root?>/install/cms/fr",
+          <?php endif;?>
+            type: "POST",
+            data: $(this).serialize(),
+            success: function (data) {
+                $("#notification").html(data);
+            },
+            error: function (data) {
+                $("#notification").html(data);
+            }
+        })
     });
 </script>

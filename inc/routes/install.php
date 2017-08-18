@@ -7,7 +7,7 @@ $router->get('/install', 'InstallController@home');
 
 // Cms
 $router->get('/install/cms', 'InstallController@app');
-$router->post('/install/cms', 'InstallController@app_');
+$router->post('/install/cms/(\w+)', 'InstallController@app_'); //the variable is assigned to the language
 
 // User
 $router->get('/install/user', 'InstallController@createUser');

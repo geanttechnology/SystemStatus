@@ -1,3 +1,9 @@
+<?php
+
+/*Copyright © 2017 by SystemStatus.fr
+All rights reserved. This file or any portion thereof MUST contain the following copyrights.*/
+
+?>
 <footer class="footer">
   <div class="container">
     <p class="text-muted">Powered by <a href="https://www.systemstatus.fr">SystemStatus &copy;</a><span class="pull-right">Version : <?=CMS_VERSION?></span></p>

@@ -1,3 +1,9 @@
+<?php
+
+/*Copyright © 2017 by SystemStatus.fr
+All rights reserved. This file or any portion thereof MUST contain the following copyrights.*/
+
+?>
 <!-- Custom Ressources -->
 <link href="<?=APP_URL?>/inc/assets/css/bootstrap-toggle.min.css" rel="stylesheet">
 <script src="<?=APP_URL?>/inc/assets/js/bootstrap-toggle.min.js"></script>

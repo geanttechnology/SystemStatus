@@ -28,7 +28,7 @@ class InstallController extends Controller
     echo $this->templates->render('app');
   }
 
-  public function app_()
+  public function app_($lang)
   {
     $file = NULL;
     if (!empty($_POST['name']) && !empty($_POST['url'])) {
@@ -49,7 +49,7 @@ class InstallController extends Controller
           $webProtocol = (isset($_SERVER['HTTPS']) ? "https://" : "http://");
           $root = explode("/install", $_SERVER["REQUEST_URI"]);
           $root = $webProtocol . $_SERVER["HTTP_HOST"] . $root[0];
-          echo "<script>window.location='" . $root . "/install/user?lang=" . $_COOKIE['lang'] . "'</script>";
+          echo "<script>window.location='" . $root . "/install/user?lang=" . $lang . "'</script>";
         } else {
           echo Auth::alert(LANG['controllers']['install']['error-writing-config-file'], 'error');
           exit(0);
@@ -64,12 +64,14 @@ class InstallController extends Controller
     }
   }
 
-  public function createUser()
+  public
+  function createUser()
   {
     echo $this->templates->render('user');
   }
 
-  public function createUser_()
+  public
+  function createUser_()
   {
     if (!empty($_POST['username']) && !empty($_POST['password'])) {
       if (preg_match(" /^[a-zA-Z0-9_]{3,16}$/ ", $_POST['username'])) { // check (3-16 charac)
@@ -86,7 +88,7 @@ class InstallController extends Controller
         file_put_contents(__DIR__ . '/../../config/app.php', $file);
 
         // user
-        UsersController::addUserForInstall($licence, $apiKey, $_POST['username'], $_POST['password']);
+        UsersController::addUserForInstall($licence, $apiKey, $_POST['username'], $_POST['password'], $_COOKIE['lang']);
 
       } else {
         Auth::alert(LANG['controllers']['install']['error-preg-match-user-create'], 'warning');
@@ -99,13 +101,15 @@ class InstallController extends Controller
     }
   }
 
-  public function finish()
+  public
+  function finish()
   {
     fopen(__DIR__ . '/../../storage/installed', 'w'); //ouvre le fichier
     echo $this->templates->render('finish');
   }
 
-  private function alert($content, $type)
+  private
+  function alert($content, $type)
   {
     echo '<div class="alert alert-' . $type . ' alert-dismissible fade in" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
