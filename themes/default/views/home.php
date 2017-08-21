@@ -97,16 +97,7 @@ All rights reserved. This file or any portion thereof MUST contain the following
     }
 
     $categories[$categoryKey]['globalStatus'] = ($status4 > 0) ? 4 : ($status3 > 0) ? 3 : ($status2 > 0) ? 2 : 1;
-
-    if($status4 > 0){
-      $categories[$categoryKey]['globalStatus'] = 4;
-    }else if ($status3 > 0){
-      $categories[$categoryKey]['globalStatus'] = 3;
-    }else if ($status2 > 0){
-      $categories[$categoryKey]['globalStatus'] = 2;
-    }else{
-      $categories[$categoryKey]['globalStatus'] = 1;
-    }
+    unset($status1, $status2, $status3, $status4);
 
 
     /* //////////////:============================://////////////////////
@@ -120,7 +111,7 @@ All rights reserved. This file or any portion thereof MUST contain the following
 
           <div class="panel-heading">
 
-            <?= $categories[$categoryKey]['name'] . CategoryController::getCategoryStatus($categories[$categoryKey]['globalStatus']) ?>
+            <?php echo $categories[$categoryKey]['name'] , CategoryController::getCategoryStatus($categories[$categoryKey]['globalStatus']); unset($categories[$categoryKey]['globalStatus']); ?>
 
           </div>
 
@@ -206,7 +197,7 @@ All rights reserved. This file or any portion thereof MUST contain the following
                                                     $lastUpdate = key($accidentReplies);
                                                     $lastUpdate = $accidentReplies[$lastUpdate]['date'];
                                                     ?>
-                                                    <?php echo ServicesController::getServiceStatusByStatusId($services[$serviceKey]['status']) . " " . Api::getDate($lastUpdate); ?>
+                                                    <?php echo ServicesController::getServiceStatusByStatusId($services[$serviceKey]['status']) . " " . Api::getDate($lastUpdate); unset($services); ?>
                                                   </span>
                                                 </dd>
                                             <?php endif; ?>

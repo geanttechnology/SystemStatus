@@ -7,7 +7,7 @@ class InstallMiddleware extends Middleware
   public function handle()
   {
       if(!App::isInstalled()){
-        header('Location: '.APP_URL.'/install');
+        header('Location: '.APP_URL.'install');
       }
   }
 }

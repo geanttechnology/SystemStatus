@@ -21,7 +21,7 @@ class Plugin
 
   private function load($name)
   {
-    $this->setPath(__DIR__ . '/../../plugins/' . $name . '/');
+    $this->setPath(__DIR__ . '/../../plugins/');
     if(file_exists($this->getPath()) && is_dir($this->getPath())){
       $this->setConfig(require_once ($this->path . 'plugin.php'));
       $this->setName($this->getConfig()['name']);

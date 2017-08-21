@@ -13,7 +13,7 @@
       return array_diff(scandir(__DIR__ . "/../../lang", 1), ['..', '.']);
     }
 
-    public static function preloadWCookie() //used during install
+    public static function loadWCookie() //used during install
     {
       if (isset($_GET['lang']) && !empty($_GET['lang']) && strlen($_GET['lang']) == 2) {
 
@@ -31,18 +31,11 @@
       }
     }
 
-    public static function preload() //used by default (after install)
-    {
-
-        return $lang = LanguageController::load(CMS_LANGUAGE);
-
-    }
-
-
-
     public static function load($language)
     {
+
       return $lang = require(__DIR__ . "/../../lang/" . $language . "/translations.php");
+
     }
 
   }

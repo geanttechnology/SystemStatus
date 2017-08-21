@@ -20,7 +20,7 @@
         <p>
             Votre licence a été bannie du système central.<br>
             Cliquez <a href="https://forum.systemstatus.fr/viewtopic.php?f=4&t=3">ici</a> pour lire nos CGU.<br><br>
-            S'il s'agit d'une erreur, veuillez prendre contact avec nous dès maintenant en <a href="mailto:contact@systemstatus.fr">cliquant ici</a>
+            S'il s'agit d'une erreur, veuillez prendre contact avec nous dès maintenant en <a href="../../index.php">cliquant ici</a>
         </p>
 
         <p>&mdash; L'equipe de SystemStatus</p>

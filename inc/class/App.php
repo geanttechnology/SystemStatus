@@ -30,7 +30,7 @@
           define('APP_ROOT', $config['root']);
         }
       } else if (!App::isInstalled()) {
-        define('APP_URL', (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]");
+        define('APP_URL', (isset($_SERVER['HTTPS']) ? "https" : "http") . "://".$_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
       }
 
 
@@ -38,11 +38,13 @@
       $this->loadClass();
       $this->loadMiddlewares();
       $this->loadControllers();
+      //Load language
       if(!App::isInstalled()){
-        define('LANG', $this->loadLanguageWCookie());
+        define('LANG', $this->loadLanguageWCookie()); //not installed
       }else{
-        define('LANG', $this->loadLanguage());
+        define('LANG', $this->loadLanguage()); //installed
       }
+      //Load language [END]
       $this->loadRoutes();
       if (App::isInstalled())
         $this->loadTheme();
@@ -64,7 +66,7 @@
       define('CMS_API', $app['cms']['api_key']);
       define('THEME_NAME', $app['theme']['name']);
       define('APP_NAME', $app['name']);
-      define('CMS_LANGUAGE', $app['language']);
+      define('CMS_LANGUAGE', $app['language']['name']);
       // APP_URL AND ROOT DIRECTORY
       if (file_exists(__DIR__ . '/../../config/app.php') && App::isInstalled()) {
         define('APP_URL', $app['url']);
@@ -77,12 +79,13 @@
 
     private function loadLanguageWCookie()
     {
-      return LanguageController::preloadWCookie();
+      return LanguageController::loadWCookie();
     }
+
 
     private function loadLanguage()
     {
-      return LanguageController::preload();
+      return LanguageController::load(CMS_LANGUAGE);
     }
 
     private function loadRoutes()

@@ -4,7 +4,7 @@ $this->layout('layouts::admin');
 ?>
 <div class="col-md-10 col-sm-12">
   <ol class="breadcrumb">
-      <li><a href="<?=APP_URL?>/admin">Accueil</a></li>
+      <li><a href="<?=APP_URL?>../../../index.php">Accueil</a></li>
       <li><a class="active" href="<?=APP_URL?>/admin/update">Mises à jour</a></li>
   </ol>
 </div>
@@ -24,7 +24,7 @@ $this->layout('layouts::admin');
     <h4>Mises à jour</h4>
     <br>
     <p>Votre version actuelle : <?=CMS_VERSION?> <br> Version disponible : <?=file_get_contents('https://api.systemstatus.fr/version.txt')?></p>
-    <a href="<?=APP_URL?>/update.php" class="btn btn-success btn-block">Mettre à jour</a>
+    <a href="<?=APP_URL?>../../../update.php" class="btn btn-success btn-block">Mettre à jour</a>
   </div>
 </div>
 
