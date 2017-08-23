@@ -4,8 +4,8 @@
     <testsuites>
         <testsuite name="Router Tests">
             <directory>tests/</directory>
-        </testsuite>
-    </testsuites>
+        <suite>
+    <suites>
     <filter>
         <whitelist>
             <directory suffix=".php">src/</directory>

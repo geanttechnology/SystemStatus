@@ -11,8 +11,8 @@ All rights reserved. This file or any portion thereof MUST contain the following
   <?php if (Auth::isActive()): ?>
       <!-- Auth alert -->
       <div id="auth-info" class="alert alert-info" role="alert">
-          <i class="fa fa-shield"></i>&nbsp;Connecté en temps que <strong><?=Auth::getUsername()?></strong>
-          <span class="pull-right"><a href="<?=APP_URL?>/admin" class="white-text">Retourner à l'administration</a></span>
+          <i class="fa fa-shield"></i>&nbsp;<?=LANG['public']['logged_as']?> <strong><?=Auth::getUsername()?></strong>
+          <span class="pull-right"><a href="<?=APP_URL?>/admin" class="white-text"><?=LANG['public']['go-back-to-admin-panel']?></a></span>
       </div>
       <!-- ./Auth alert -->
   <?php endif ?>
@@ -36,11 +36,11 @@ All rights reserved. This file or any portion thereof MUST contain the following
 
     if ($nonOperationalServices > 0):?>
         <div class="alert alert-warning fade in" role="alert">
-            <strong>Certains services ne sont pas opérationnels <i class="fa fa-info-circle pull-right" style="font-size: 1.5em"></i></strong>
+            <strong><?=LANG['public']['some-services-not-op']?> <i class="fa fa-info-circle pull-right" style="font-size: 1.5em"></i></strong>
         </div>
     <?php else: ?>
         <div class="alert alert-success alert-dismissible fade in" role="alert">
-            <strong>Tout les services sont opérationnels</strong>
+            <strong><?=LANG['public']['all-services-op']?></strong>
             <i class="fa fa-check-circle-o pull-right" style="font-size: 1.5em;"></i>
         </div>
     <?php endif;
@@ -162,7 +162,7 @@ All rights reserved. This file or any portion thereof MUST contain the following
                                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                           <span aria-hidden="true">&times;</span>
                                       </button>
-                                      <h4 class="modal-title">Consultation du rapport</h4>
+                                      <h4 class="modal-title"><?=LANG['accidents']['viewing-report']?></h4>
                                   </div>
                                   <!-- Modal Body ====================================================================================================================== -->
                                   <div class="modal-body">
@@ -170,26 +170,26 @@ All rights reserved. This file or any portion thereof MUST contain the following
                                       <div class="row">
 
                                           <h3 class="col-md-12">
-                                              Rapport d'incident #<?= $accidentMainData["accident_serial_id"] ?>
-                                              <small>Statut de l'incident: <?= AdminController::getIncidentStatus($accidentMainData["accident_status"]) ?></small>
+                                              <?=LANG['accidents']['accident-report']?> #<?= $accidentMainData["accident_serial_id"] ?>
+                                              <small><?=LANG['accidents']['accident-status']?>: <?= AdminController::getIncidentStatus($accidentMainData["accident_status"]) ?></small>
                                           </h3>
                                           <dl class="dl-horizontal col-md-12">
-                                              <dt>Création de l'incident</dt>
-                                              <dd>Créé <strong>
+                                              <dt><?=LANG['accidents']['accident-making']?></dt>
+                                              <dd><?=LANG['accidents']['made']?> <strong>
                                                   <?php
                                                   Api::getDate($accidentMainData["date"]);
                                                   ?>
-                                                  </strong> par <strong><?= $accidentAuthor["username"] ?></strong>
+                                                  </strong> <?=LANG['accidents']['by']?> <strong><?= $accidentAuthor["username"] ?></strong>
                                               </dd>
 
-                                              <dt>Service lié</dt>
+                                              <dt><?=LANG['accidents']['related-service']?></dt>
                                               <dd>
-                                                  <strong><?= $accidentService['name'] ?></strong> dans la catégorie
+                                                  <strong><?= $accidentService['name'] ?></strong> <?=LANG['accidents']['in-the-category']?>
                                                   <strong><?= $accidentCategory['name'] ?></strong>
                                               </dd>
 
                                             <?php if (is_array($accidentReplies)): ?>
-                                                <dt>Dernière mise à jour</dt>
+                                                <dt><?=LANG['accidents']['latest-update']?></dt>
                                                 <dd>
                                                   <span class="pull-left">
                                                     <?php
@@ -226,7 +226,7 @@ All rights reserved. This file or any portion thereof MUST contain the following
                                                           <div class="timeline-label">
                                                               <h2>
                                                                 <?= $accidentReplies[$accidentRepliesKey]["author_username"] ?>
-                                                                  <span>a répondu à l'incident <span class="pull-right">Posté <?= Api::getDate($accidentReplies[$accidentRepliesKey]['date']) ?></span></span>
+                                                                  <span><?=LANG['accidents']['has-answered']?> <span class="pull-right"><?=LANG['accidents']['posted']?> <?= Api::getDate($accidentReplies[$accidentRepliesKey]['date']) ?></span></span>
                                                               </h2>
                                                               <p>
                                                                 <?php AccidentsController::getAccidentReplyContent($accidentReplies[$accidentRepliesKey]['content']) ?>
@@ -253,7 +253,7 @@ All rights reserved. This file or any portion thereof MUST contain the following
                                                       <div class="timeline-label">
 
                                                           <h2>
-                                                              <span><?= $accidentAuthor["username"] ?> a créé le rapport d'incident</span>
+                                                              <span><?= $accidentAuthor["username"] ?> <?=LANG['accidents']['has-made-accident-report']?></span>
                                                               <span class="pull-right"><span>Posté <?= Api::getDate($accidentMainData["date"]) ?></span></span>
                                                           </h2>
                                                           <p>
@@ -280,10 +280,10 @@ All rights reserved. This file or any portion thereof MUST contain the following
                                   <div class="modal-footer">
                                     <?php if (Auth::isActive()): ?>
                                         <a href="<?= APP_URL ?>/admin/accidents/<?= $accidentMainData['accident_serial_id'] ?>"
-                                           class="btn btn-primary">Gérer l'incident</a>
+                                           class="btn btn-primary"><?=LANG['accidents']['manage-accident']?></a>
                                     <?php endif; ?>
 
-                                      <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                                      <button type="button" class="btn btn-default" data-dismiss="modal"><?=LANG['global']['maj-close']?></button>
                                   </div>
                               </div>
                           </div>
@@ -338,8 +338,8 @@ echo "</div>"; //end #lom-452
     <div class="text-center text-muted" style="margin-top: 10%">
         <i class="fa fa-magic fa-4x"></i>
         <br>
-        <h4 class="text-muted">Rendez-vous dès à présent sur votre panel afin de gérer vos catégories et services !</h4>
-        <a href="<?=APP_URL?>/admin" class="btn btn-default" id="lom-453">Panel d'administration <i class="fa fa-cog fa-spin"></i></a>
+        <h4 class="text-muted"><?=LANG['public']['go-to-panel-to-manage']?></h4>
+        <a href="<?=APP_URL?>/admin" class="btn btn-default" id="lom-453"><?=LANG['global']['maj-admin-panel']?> <i class="fa fa-cog fa-spin"></i></a>
     </div>
   <?php
 }
@@ -352,7 +352,7 @@ $allClosedAccidents = AccidentsController::getAll();
 
 if(isset($allClosedAccidents["data"]) && is_array($allClosedAccidents["data"])) {
 
-  echo "<h4 class='text-center -bold' style='margin-top: 15px;'>Incidents résolus ces 7 derniers jours</h4>";
+  echo "<h4 class='text-center -bold' style='margin-top: 15px;'>".LANG['accidents']['last-7-days-accidents']."</h4>";
 
   echo '<div class="container">';
 
@@ -380,7 +380,7 @@ if(isset($allClosedAccidents["data"]) && is_array($allClosedAccidents["data"])) 
                 </p>
                 <hr>
                 <div class="row">
-                    <span class="text-muted pull-right" style="margin-right: 15px;">Incident créé <?=Api::getDate($allClosedAccidents[$key]["date"])?></span>
+                    <span class="text-muted pull-right" style="margin-right: 15px;"><?=LANG['accidents']['accident-made']?> <?=Api::getDate($allClosedAccidents[$key]["date"])?></span>
                 </div>
 
             </div>

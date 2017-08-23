@@ -20,8 +20,8 @@ if(Auth::isActive()) {
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="<?=APP_URL?>/test/inc/assets/css/bootstrap-theme.css">
-    <link href="<?=APP_URL?>/test/inc/assets/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?=APP_URL?>/inc/assets/css/bootstrap-theme.css">
+    <link href="<?=APP_URL?>/inc/assets/css/bootstrap.css" rel="stylesheet">
 
     <!-- Additional theme -->
     <link href="<?=APP_URL?>/themes/<?=THEME_NAME?>/css/custom.css" rel="stylesheet">
@@ -30,7 +30,7 @@ if(Auth::isActive()) {
   <?=Theme::loadCss('login')?>
 
     <!-- Animated CSS -->
-    <link href="<?=APP_URL?>/test/inc/assets/css/animated.css" rel="stylesheet">
+    <link href="<?=APP_URL?>/inc/assets/css/animated.css" rel="stylesheet">
 
     <!-- Font Awesome CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">

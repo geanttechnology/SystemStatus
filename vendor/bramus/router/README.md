@@ -304,7 +304,7 @@ When making `HEAD` requests all output will be buffered to prevent any content t
 
 - If PHPUnit is not installed globally, install it locally throuh composer by running `composer install --dev`. Run the tests themselves by calling `vendor/bin/phpunit`.
 
-  The included `composer.json` will also install `php-code-coverage` which allows one to generate a __Code Coverage Report__. Run `phpunit --coverage-html ./tests-report` (XDebug required), a report will be placed into the `tests-report` subfolder.
+  The included `composer.json` will also install `php-code-coverage` which allows one to generate a __Code Coverage Report__. Run `phpunit --coverage-html .s-report` (XDebug required), a report will be placed into the `tests-report` subfolder.
 
 
 ## Acknowledgements

@@ -16,6 +16,8 @@ return [
     "maj-next"          => "Suivant",
     "maj-password"      => "Mot de passe",
     "maj-tutorial"      => "Tutoriel",
+    "maj-close"         => "Fermer",
+    "maj-admin-panel"   => "Panel d'administration",
 
   ],
 
@@ -24,7 +26,7 @@ return [
     "install" => [
       "error-writing-config-file"      => "<strong>Erreur :</strong> pendant la modification du fichier de configuration.",
       "error-check-example-app-exists" => "<strong>Attention :</strong> Veuillez vérifier que le fichier <code>config/app.example.php</code> existe.",
-      "error-preg-match-user-create" => "<strong>Attention :</strong> Les caractères spéciaux sont interdits ou la longueur requise n'est pas respectée !"
+      "error-preg-match-user-create"   => "<strong>Attention :</strong> Les caractères spéciaux sont interdits ou la longueur requise n'est pas respectée !",
     ],
 
     "users" => [
@@ -75,12 +77,30 @@ return [
 
   "public" => [
 
-    "head-html" => [
+    "logged_as"              => "Connecté en temps que",
+    "go-back-to-admin-panel" => "Retourner à l'administration",
+    "some-services-not-op"   => "Certains services ne sont pas opérationnels",
+    "all-services-op"        => "Tout les services sont opérationnels",
+    "go-to-panel-to-manage"  => "Rendez-vous dès à présent sur votre panel afin de gérer vos catégories et services !",
+  ],
 
-      "",
+  "accidents" => [
 
-    ],
-
+    "viewing-report"           => "Consultation du rapport",
+    "accident-report"          => "Rapport d'incident",
+    "accident-status"          => "Statut de l'incident",
+    "accident-making"          => "Création de l'incident",
+    "made"                     => "Créé",
+    "by"                       => "par",
+    "related-service"          => "Service lié",
+    "in-the-category"          => "dans la catégorie",
+    "latest-update"            => "Dernière mise à jour",
+    "has-answered"             => "a répondu à l'incident",
+    "posted"                   => "Posté",
+    "has-made-accident-report" => "a créé le rapport d'incident",
+    "manage-accident"          => "Gérer l'incident",
+    "last-7-days-accidents"    => "Incidents résolus ces 7 derniers jours",
+    "accident-made"            => "Incident créé",
 
   ],
 

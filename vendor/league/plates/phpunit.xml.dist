@@ -3,8 +3,8 @@
     <testsuites>
         <testsuite name="all">
             <directory suffix="Test.php">tests/</directory>
-        </testsuite>
-    </testsuites>
+        <suite>
+    <suites>
     <filter>
         <whitelist>
             <directory suffix=".php">src/</directory>
