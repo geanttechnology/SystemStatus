@@ -18,7 +18,7 @@ return [
     "maj-tutorial"      => "Tutoriel",
     "maj-close"         => "Fermer",
     "maj-admin-panel"   => "Panel d'administration",
-
+    "maj-monitoring"    => "Monitoring",
   ],
 
   "controllers" => [
@@ -47,6 +47,11 @@ return [
       "resolved"    => "Résolu",
       "in-progress" => "En cours",
     ],
+
+    "auth" => [
+      "successful" => "<strong>Succès :</strong> vous êtes maintenant connecté !",
+      "error" => "<strong>Attention : </strong> Veuillez vérifier votre mot de passe !",
+    ]
 
   ],
 
@@ -80,7 +85,9 @@ return [
 
     "login" => [
 
-      "connection" => "Connexion",
+      "connection"                => "Connexion",
+      "go-back-to-public-section" => "Retourner au site",
+      "sign-in"                   => "Se connecter",
 
     ],
 

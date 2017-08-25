@@ -9,9 +9,9 @@ All rights reserved. This file or any portion thereof MUST contain the following
 
     <div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-12">
 
-        <div class="panel panel-default" style="margin-top: 40%;" >
+        <div class="panel panel-default" style="margin-top: 40%;">
             <div class="panel-heading">
-                <div class="panel-title text-center">SystemStatus - Monitoring</div>
+                <div class="panel-title text-center">SystemStatus - <?= LANG['global']['maj-monitoring'] ?></div>
             </div>
 
             <div class="panel-body">
@@ -20,18 +20,23 @@ All rights reserved. This file or any portion thereof MUST contain the following
 
                     <div class="input-group" style="margin-bottom:10px;">
                         <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                        <input id="user" type="text" class="form-control" name="username" placeholder="Utilisateur" required="">
+                        <input id="user" type="text" class="form-control" name="username" placeholder="Utilisateur"
+                               required="">
                     </div>
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                        <input id="password" type="password" class="form-control" name="password" placeholder="Mot de passe" required="">
+                        <input id="password" type="password" class="form-control" name="password"
+                               placeholder="Mot de passe" required="">
                     </div>
 
                     <div class="form-group" style="margin-top:10px;">
                         <!-- Button -->
                         <div class="col-sm-12 controls">
-                            <a href="<?=APP_URL?>/" class="pull-left fam-501" >Retourner au site</a>
-                            <button type="submit" class="btn btn-primary btn-sm pull-right" id="loginBtn" data-loading-text="Connexion en cours..."><i class="fa fa-sign-in"></i> Se connecter</button>
+                            <a href="<?= APP_URL ?>/"
+                               class="pull-left fam-501"><?= LANG['admin']['login']['go-back-to-public-section'] ?></a>
+                            <button type="submit" class="btn btn-primary btn-sm pull-right" id="loginBtn"
+                                    data-loading-text="Connexion en cours..."><i
+                                        class="fa fa-sign-in"></i> <?= LANG['admin']['login']['sign-in'] ?></button>
                         </div>
                     </div>
 
@@ -39,9 +44,9 @@ All rights reserved. This file or any portion thereof MUST contain the following
 
                     <div class="text-center -align-center">
                         <a href="https://www.systemstatus.fr" target="_blank">
-                      <span>
-                        Powered by SystemStyatus
-                      </span>
+                          <span>
+                            <?= LANG['global']['copyrights-nolink'] ?>
+                          </span>
                         </a>
                     </div>
 
@@ -51,7 +56,7 @@ All rights reserved. This file or any portion thereof MUST contain the following
     </div>
 
     <script>
-        $("#loginForm").on("submit", function(e){
+        $("#loginForm").on("submit", function (e) {
             e.preventDefault();
 
             var $btn = $("#loginBtn").button('loading');
@@ -60,12 +65,12 @@ All rights reserved. This file or any portion thereof MUST contain the following
                 url: "<?=APP_URL?>/login",
                 type: "POST",
                 data: $(this).serialize(),
-                success: function(data){
+                success: function (data) {
                     $("#notification").html(data);
                 }
             });
 
-            setTimeout(function(){
+            setTimeout(function () {
                 $btn.button('reset')
             }, 1000);
         });

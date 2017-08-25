@@ -19,20 +19,21 @@
       //Send credentials
       $api = new API();
       $result = json_decode($api->authUser($username, $password), TRUE);
-      $data = $result['data'];
+      if(isset($result['data'])){
+        $data = $result['data'];
+      }
 
       //Parse result
-
-      if ($result['request'] == "successful") {
+      if (isset($result['request']) && $result['request'] == "successful") {
         Auth::setID($data['id']);
         Auth::setUsername($data['username']);
         Auth::setRank($data['rank']);
         Auth::setStatus(1, time());
 
-        echo Auth::alert("<strong>Succès :</strong> vous êtes maintenant connecté !<span class='pull-right'><i class='fa fa-refresh fa-spin'></i></span>", 'success', 1);
+        echo Auth::alert(LANG['controllers']['auth']['successful']."<span class='pull-right'><i class='fa fa-refresh fa-spin'></i></span>", 'success', 1);
         echo "<meta http-equiv='refresh' content='2; url = " . APP_URL . "/admin'/>";
       } else {
-        echo Auth::alert('<strong>Attention : </strong> Veuillez vérifier votre mot de passe !', 'danger', 1);
+        echo Auth::alert(LANG['controllers']['auth']['error'], 'danger', 1);
       }
     }
 
