@@ -29,7 +29,7 @@ class ServicesController extends Controller
         switch ($result['why']){
           case "takenName":
               unset($result);
-            echo Auth::alert("Le service <strong>".$_POST['name']."</strong> existe déjà dans la catégorie sélectionnée !", 'warning');
+            echo Auth::alert(LANG['controllers']['services']['already-exists'], 'warning');
             break;
           case "incorrectStatus":
               unset($result);
@@ -103,19 +103,19 @@ class ServicesController extends Controller
 
     switch (intval($serviceStatus)) {
       case 1: unset($serviceStatus)?>
-          <small class="pull-right text-success status_dot">Opérationnel</small>
+          <small class="pull-right text-success status_dot"><?=LANG['controllers']['services']['operational']?></small>
         <?php break;
 
       case 2: unset($serviceStatus)?>
-          <small class="pull-right text-warning status_dot">Panne partielle</small>
+          <small class="pull-right text-warning status_dot"><?=LANG['controllers']['services']['partial-failure']?></small>
         <?php break;
 
       case 3: unset($serviceStatus)?>
-          <small class="pull-right text-danger status_dot">Défaillant</small>
+          <small class="pull-right text-danger status_dot"><?=LANG['controllers']['services']['defective']?></small>
         <?php break;
 
       case 4: unset($serviceStatus)?>
-          <small class="pull-right text-info status_dot">Maintenance</small>
+          <small class="pull-right text-info status_dot"><?=LANG['controllers']['services']['maintenance']?></small>
         <?php break;
 
       default: unset($serviceStatus)?>
@@ -128,19 +128,19 @@ class ServicesController extends Controller
 
     switch (intval($serviceStatus)) {
       case 1:unset($serviceStatus)?>
-          <span class="label label-success">Opérationnel</span>
+          <span class="label label-success"><?=LANG['controllers']['services']['operational']?></span>
         <?php break;
 
       case 2:unset($serviceStatus)?>
-          <span class="label label-warning">Panne partielle</span>
+          <span class="label label-warning"><?=LANG['controllers']['services']['partial-failure']?></span>
         <?php break;
 
       case 3:unset($serviceStatus)?>
-          <span class="label label-danger">Défaillant</span>
+          <span class="label label-danger"><?=LANG['controllers']['services']['defective']?></span>
         <?php break;
 
       case 4:unset($serviceStatus)?>
-          <span class="label label-info">Maintenance</span>
+          <span class="label label-info"><?=LANG['controllers']['services']['maintenance']?></span>
         <?php break;
 
       default:?>
@@ -153,19 +153,19 @@ class ServicesController extends Controller
 
     switch (intval($statusID)) {
       case 1:unset($statusID)?>
-          <small class="text-success status_dot">Opérationnel</small>
+          <small class="text-success status_dot"><?=LANG['controllers']['services']['operational']?></small>
         <?php break;
 
       case 2:unset($statusID)?>
-          <small class="text-warning status_dot">Panne partielle</small>
+          <small class="text-warning status_dot"><?=LANG['controllers']['services']['partial-failure']?></small>
         <?php break;
 
       case 3:unset($statusID)?>
-          <small class="text-danger status_dot">Défaillant</small>
+          <small class="text-danger status_dot"><?=LANG['controllers']['services']['defective']?></small>
         <?php break;
 
       case 4:unset($statusID)?>
-          <small class="text-info status_dot">Maintenance</small>
+          <small class="text-info status_dot"><?=LANG['controllers']['services']['maintenance']?></small>
         <?php break;
 
       default:?>

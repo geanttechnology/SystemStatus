@@ -35,6 +35,19 @@ return [
       "already-exists"  => "Un utilisateur avec cet identifiant existe déjà.",
     ],
 
+    "services" => [
+      "operational" => "Opérationnel",
+      "partial-failure" => "Panne partielle",
+      "defective" => "Défaillant",
+      "maintenance" => "Maintenance",
+      "already-exists" => "Le service existe déjà dans la catégorie sélectionnée !"
+    ],
+
+    "admin" => [
+      "resolved" => "Résolu",
+      "in-progress" => "En cours",
+    ]
+
   ],
 
   "install" => [

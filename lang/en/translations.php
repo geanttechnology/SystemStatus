@@ -16,8 +16,8 @@ return [
     "maj-next"          => "Next",
     "maj-password"      => "Password",
     "maj-tutorial"      => "Tutorial",
-    "maj-close"         => "Fermer",
-    "maj-admin-panel"   => "Panel d'administration",
+    "maj-close"         => "Close",
+    "maj-admin-panel"   => "Administration panel",
 
   ],
 
@@ -34,6 +34,19 @@ return [
       "limits-reached"  => "Your licence limits have been reached, please upgrade your licence in order to create more users.",
       "already-exists"  => "This username has already been taken.",
     ],
+
+    "services" => [
+      "operational" => "Operational",
+      "partial-failure" => "Partial failure",
+      "defective" => "Defective",
+      "maintenance" => "Maintenance",
+      "already-exists" => "The service does already exist in this category"
+    ],
+
+    "admin" => [
+      "resolved" => "Resolved",
+      "in-progress" => "In progress",
+    ]
 
   ],
 

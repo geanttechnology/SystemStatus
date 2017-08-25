@@ -476,11 +476,18 @@ class Api
 
   public static function getDate($date)
   {
-    $api = new API();
-    $date = $api->request([
-      'action' => 'getDate',
-      'date'   => $date,
-    ]);
+    if(CMS_LANGUAGE == "fr") {
+
+      $api = new API();
+      $date = $api->request([
+        'action' => 'getDate',
+        'date'   => $date,
+      ]);
+
+    }else{
+      return date('m/d/Y H:i', $date);
+    }
+
 
     return $date;
   }

@@ -20,8 +20,7 @@ All rights reserved. This file or any portion thereof MUST contain the following
     <!-- Services status check -->
   <?php
   $api = new API();
-  $services = json_decode($api->getServices());
-  $services = json_decode(json_encode($services->data), True);
+  $services = json_decode(json_encode(json_decode($api->getServices())->data), True);
 
   //Initialize values
   $nonOperationalServices = 0;
@@ -51,8 +50,7 @@ All rights reserved. This file or any portion thereof MUST contain the following
     <!-- Categories -->
   <?php
   $api = new API();
-  $categories = json_decode($api->getCategories());
-  $categories = json_decode(json_encode($categories->data), True);
+  $categories = json_decode(json_encode(json_decode($api->getCategories())->data), True);
 
   if(is_array($categories)) {
 
@@ -142,6 +140,7 @@ All rights reserved. This file or any portion thereof MUST contain the following
                     $accidentService = json_decode(json_encode($accident->service), True);
                     $accidentCategory = json_decode(json_encode($accident->category), True);
                     $accidentAuthor = json_decode(json_encode($accident->user), True);
+                    unset($accident);
 
 
                     ?>
@@ -197,7 +196,7 @@ All rights reserved. This file or any portion thereof MUST contain the following
                                                     $lastUpdate = key($accidentReplies);
                                                     $lastUpdate = $accidentReplies[$lastUpdate]['date'];
                                                     ?>
-                                                    <?php echo ServicesController::getServiceStatusByStatusId($services[$serviceKey]['status']) . " " . Api::getDate($lastUpdate); unset($services); ?>
+                                                    <?php echo ServicesController::getServiceStatusByStatusId($services[$serviceKey]['status']) . " " . Api::getDate($lastUpdate, CMS_LANGUAGE); unset($services); ?>
                                                   </span>
                                                 </dd>
                                             <?php endif; ?>
@@ -254,7 +253,7 @@ All rights reserved. This file or any portion thereof MUST contain the following
 
                                                           <h2>
                                                               <span><?= $accidentAuthor["username"] ?> <?=LANG['accidents']['has-made-accident-report']?></span>
-                                                              <span class="pull-right"><span>Posté <?= Api::getDate($accidentMainData["date"]) ?></span></span>
+                                                              <span class="pull-right"><span><?=LANG['accidents']['posted']?> <?= Api::getDate($accidentMainData["date"]) ?></span></span>
                                                           </h2>
                                                           <p>
                                                             <?= $accidentMainData["content"] ?>

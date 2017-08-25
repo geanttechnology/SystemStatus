@@ -183,11 +183,11 @@ class AdminController extends Controller
   public static function getIncidentStatus($int){
     switch ($int) {
       case 0:
-        return "<span class='text-success'>Résolu <i class='fa fa-check-circle-o'></i></span>";
+        return "<span class='text-success'>".LANG['controllers']['admin']['resolved']." <i class='fa fa-check-circle-o'></i></span>";
         break;
 
       case 1:
-        return "<span class='text-danger'>En cours <i class='fa fa-refresh'></i></span>";
+        return "<span class='text-danger'>".LANG['controllers']['admin']['in-progress']." <i class='fa fa-refresh'></i></span>";
         break;
 
       default:
