@@ -36,17 +36,17 @@ return [
     ],
 
     "services" => [
-      "operational" => "Operational",
+      "operational"     => "Operational",
       "partial-failure" => "Partial failure",
-      "defective" => "Defective",
-      "maintenance" => "Maintenance",
-      "already-exists" => "The service does already exist in this category"
+      "defective"       => "Defective",
+      "maintenance"     => "Maintenance",
+      "already-exists"  => "The service does already exist in this category",
     ],
 
     "admin" => [
-      "resolved" => "Resolved",
+      "resolved"    => "Resolved",
       "in-progress" => "In progress",
-    ]
+    ],
 
   ],
 

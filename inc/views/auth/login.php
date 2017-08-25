@@ -12,7 +12,7 @@ if(Auth::isActive()) {
 <html>
 <head>
     <meta charset="utf-8">
-    <title><?=APP_NAME?> | Connexion</title>
+    <title><?=APP_NAME?> | <?= LANG["admin"]["login"]["connection"] ?></title>
     <meta name="author" content="SystemStatus.fr">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 

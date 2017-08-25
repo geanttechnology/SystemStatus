@@ -488,7 +488,6 @@ class Api
       return date('m/d/Y H:i', $date);
     }
 
-
     return $date;
   }
 

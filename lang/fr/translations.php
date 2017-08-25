@@ -36,17 +36,17 @@ return [
     ],
 
     "services" => [
-      "operational" => "Opérationnel",
+      "operational"     => "Opérationnel",
       "partial-failure" => "Panne partielle",
-      "defective" => "Défaillant",
-      "maintenance" => "Maintenance",
-      "already-exists" => "Le service existe déjà dans la catégorie sélectionnée !"
+      "defective"       => "Défaillant",
+      "maintenance"     => "Maintenance",
+      "already-exists"  => "Le service existe déjà dans la catégorie sélectionnée !",
     ],
 
     "admin" => [
-      "resolved" => "Résolu",
+      "resolved"    => "Résolu",
       "in-progress" => "En cours",
-    ]
+    ],
 
   ],
 
@@ -78,13 +78,11 @@ return [
 
   "admin" => [
 
-    "head-html" => [
+    "login" => [
 
-      "",
+      "connection" => "Connexion",
 
     ],
-
-    //"" => "",
 
   ],
 
