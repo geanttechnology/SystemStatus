@@ -19,6 +19,7 @@ return [
     "maj-close"         => "Fermer",
     "maj-admin-panel"   => "Panel d'administration",
     "maj-monitoring"    => "Monitoring",
+    "maj-admin" => "Admin",
   ],
 
   "controllers" => [
@@ -88,6 +89,38 @@ return [
       "connection"                => "Connexion",
       "go-back-to-public-section" => "Retourner au site",
       "sign-in"                   => "Se connecter",
+
+    ],
+
+    "side-bar" => [
+
+      "info-license" => "Information de licence",
+      "maj-license" => "Licence",
+      "kind-license" => "Type de license",
+      "assigned-ip" => "IP assignée",
+      "assigned-host" => "Hôte assignée",
+      "account-manager" => "Gestionnaire de licence",
+      "go-back-to-public-site" => "Retourner sur le site public",
+
+      "maj-home" => "Accueil",
+      "maj-users" => "Utilisateurs",
+      "maj-infra" => "Infrastructures",
+      "maj-monitoring" => "Monitoring",
+      "maj-themes" => "Thèmes",
+      "maj-config" => "Paramètres",
+      "maj-news" => "Actualité",
+
+      "about-license" => "A propos de ma licence",
+      "info-license-basic" => "Vous possédez une licence de type \"Basic\" ce qui impose une limitation concernant le nombre possible de catégories, services etc... Plus d'infos sur notre",
+      "website" => "site internet",
+
+    ],
+
+    "placeholder" => [
+
+      "title-incident" => "Titre de l'incident",
+      "report-incident" => "Rapport de l'incident",
+      "maj-cancel" => "Annuler",
 
     ],
 
