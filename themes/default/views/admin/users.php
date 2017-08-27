@@ -9,7 +9,7 @@ All rights reserved. This file or any portion thereof MUST contain the following
     <div id="result"></div>
 
     <div class="row">
-        <h3 class="text-center text-uppercase">Liste des utilisateurs</h3>
+        <h3 class="text-center text-uppercase"><?=LANG["admin"]["users"]["list-users"] ?></h3>
         <hr class="col-md-6 col-md-offset-3">
     </div>
 
@@ -18,9 +18,9 @@ All rights reserved. This file or any portion thereof MUST contain the following
             <thead>
             <tr>
                 <th>#</th>
-                <th>Utilisateur</th>
-                <th>Type de compte</th>
-                <th>Action</th>
+                <th><?=LANG["admin"]["users"]["maj-user"] ?></th>
+                <th><?=LANG["admin"]["users"]["kind-account"] ?></th>
+                <th><?=LANG["admin"]["themes"]["maj-action"] ?></th>
             </tr>
             </thead>
 
@@ -63,26 +63,26 @@ All rights reserved. This file or any portion thereof MUST contain the following
         </table>
     </div>
 
-    <h4>Ajouter un utilisateur</h4>
+    <h4><?=LANG["admin"]["users"]["add-user"] ?></h4>
     <form id="addUserForm" class="col-md-4 col-sm-12">
         <div class="form-group" id="helpAddUser">
-            <label for="">Utilisateur</label>
-            <input id="username" type="text" class="form-control" placeholder="Utilisateur" name="username" autocomplete="off" required>
+            <label for=""><?=LANG["admin"]["users"]["maj-user"] ?></label>
+            <input id="username" type="text" class="form-control" placeholder="<?=LANG["admin"]["users"]["maj-user"] ?>" name="username" autocomplete="off" required>
             <span class="help-block" id="helpUsernameValue"></span>
         </div>
         <div class="form-group">
-            <label for="">Mot de passe</label>
+            <label for=""><?=LANG["global"]["maj-password"] ?></label>
             <input id="password" type="password" class="form-control" id="" placeholder="****************" name="password" autocomplete="off" required>
         </div>
         <div class="form-group">
-            <label for="">Type de compte</label>
+            <label for=""><?=LANG["admin"]["users"]["kind-account"] ?></label>
             <select id="rank" class="form-control" name="rank" required>
                 <!-- <option>1</option> -->
-                <option value="2">Normal</option>
-                <option value="3">Administrateur</option>
+                <option value="2"><?=LANG["admin"]["users"]["maj-normal"] ?></option>
+                <option value="3"><?=LANG["admin"]["users"]["maj-admin"] ?></option>
             </select>
         </div>
-        <button id="addUserSubmit" type="submit" class="btn btn-primary col-md-12 full-width-mobile" name="submitAddUser" value="">Valider</button>
+        <button id="addUserSubmit" type="submit" class="btn btn-primary col-md-12 full-width-mobile" name="submitAddUser" value=""><?=LANG["admin"]["users"]["maj-validate"] ?></button>
     </form>
 
     <div class="col-md-8 col-md-ofset-2">

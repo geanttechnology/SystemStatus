@@ -5,8 +5,8 @@ $this->layout('layouts::admin');
 
 <div class="col-md-10 col-sm-12">
     <ol class="breadcrumb">
-        <li><a href="<?=APP_URL?>/admin">Accueil</a></li>
-        <li><a  class="active" href="<?=APP_URL?>/admin/themes">Themes</a></li>
+        <li><a href="<?=APP_URL?>/admin"><?=LANG["admin"]["side-bar"]["maj-home"] ?></a></li>
+        <li><a  class="active" href="<?=APP_URL?>/admin/themes"><?=LANG["admin"]["side-bar"]["maj-themes"] ?></a></li>
     </ol>
 </div>
 
